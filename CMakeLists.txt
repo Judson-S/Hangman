@@ -12,10 +12,4 @@ endif()
 project ("Hangman")
 
 # Include sub-projects.
-add_subdirectory ("state")
-
-add_subdirectory("console")
-
-add_subdirectory("game")
-
-add_subdirectory("main")
+add_subdirectory("Hangman")

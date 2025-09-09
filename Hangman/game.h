@@ -2,8 +2,8 @@
 
 #pragma once
 
-#include "console.h"
-#include "state.h"
+#include "console.cpp"
+#include "state.cpp"
 #include <cctype>
 
 namespace Hangman {

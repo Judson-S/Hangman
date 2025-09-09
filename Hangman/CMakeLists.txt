@@ -1,0 +1,1 @@
+add_executable(Hangman "console.h" "console.cpp" "game.h" "game.cpp" "state.h" "state.cpp" "main.h" "main.cpp")
