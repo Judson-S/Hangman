@@ -2,12 +2,14 @@
 //
 
 #include "console.h"
-
+using std::cout;
+using std::cin;
+using std::string;
 string uppercase(string word)
 {
 	for (char& c : word)
 	{
-		toupper(c);
+		c = toupper(c);
 	}
 	return word;
 }
@@ -22,7 +24,7 @@ void print_game_info(int mistakes, int max_mistakes, std::vector<char> wrong_let
 		{
 			cout << c;
 		}
-		cout << "\n\n"
+		cout << "\n\n";
 	}
 	else
 	{
@@ -31,7 +33,7 @@ void print_game_info(int mistakes, int max_mistakes, std::vector<char> wrong_let
 }
 void clue_update(string& clue, string answer, char guess, int correct_guess_index, std::vector<char> wrong_letters)
 {
-	for (int i = 0; i < answer.size(); ++i)
+	for (size_t i = 0; i < answer.size(); ++i)
 	{
 		correct_guess_index = answer.find(guess);
 		if (correct_guess_index != string::npos)
@@ -52,7 +54,7 @@ void io::print_screen(string word, int mistakes, int max_mistakes, std::vector<c
 {
 	string answer, clue;
 	int correct_guess_index = 0;
-	for (int i = 0; i < word.size(); ++i)
+	for (size_t i = 0; i < word.size(); ++i)
 	{
 		answer += '_';
 	}
@@ -63,10 +65,10 @@ void io::print_screen(string word, int mistakes, int max_mistakes, std::vector<c
 	print_game_info(mistakes, max_mistakes, wrong_letters, clue);
 }
 
-template<typename T>
-T io::get_input()
+
+char io::get_input()
 {
-	T guess;
+	char guess;
 	cin >> guess;
 	return guess;
 }
